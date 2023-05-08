@@ -24,7 +24,7 @@ export default function EsignatureApp() {
     return (
         <div className='container text-center'>
             <Title classes={"title"} text={name} />
-            <Title classes={"main-title mb-4"} text={!date ? "DoB" : date} />
+            <Title classes={"main-title mb-4"} text={!date ? "Date of Birth" : date} />
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, qui laudantium? Aliquam eum ea id aut. Inventore asperiores aut nobis eaque ab ipsum, similique repudiandae, accusamus quis minima debitis voluptatibus.
             </p>
 
