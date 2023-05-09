@@ -9,6 +9,8 @@ export default function RandomizeColor() {
     const handleSecClick = (e) => {
         // console.log(e.target);
         console.log(getRandomColor());
+        let body = document.querySelector("body");
+        body.style.background = getRandomColor();
     };
 
     function getRandomColor() {
