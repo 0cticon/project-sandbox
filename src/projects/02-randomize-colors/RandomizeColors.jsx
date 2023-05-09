@@ -28,12 +28,13 @@ export default function RandomizeColor() {
             <button
                 className='btn btn-danger'
                 onClick={(event) => handleClick(event)}
-            >
-                Click me
-            </button>
-            <button className='btn btn-success' onClick={handleSecClick}>Click me</button>
-            <button className='btn btn-primary' onClick={handleSecClick}>Click me</button>
-            <button className='btn btn-warning' onClick={handleSecClick}>Click me</button>
+            >Click me</button>
+            <button className='btn btn-success'
+                onClick={handleSecClick}>Click me</button>
+            <button className='btn btn-primary'
+                onClick={handleSecClick}>Click me</button>
+            <button className='btn btn-warning'
+                onClick={handleSecClick}>Click me</button>
         </div>
     );
 }
