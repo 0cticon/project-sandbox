@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Title from "../components/Title";
 import { AiFillSmile, AiFillHeart, AiOutlineHeart, AiOutlineComment, } from "react-icons/ai";
 import DoggyDog from "./img/dog.jpeg";
 export default function LikePhotoApp() {
-    let like = false;
+    // let like = false;
+    const [like, setLike] = useState(false);
+    const [count, setCount] = useState(false);
+
+    const toggleLike = () => {
+        if (!like) {
+            setLike(true);
+        } else {
+            setLike(false);
+        }
+    };
     return (
         <div className="container text-center">
             <Title text={"Like Photo App"} />
@@ -20,7 +30,8 @@ export default function LikePhotoApp() {
                     className="card-footer fs-xl d-flex"
                     style={{ justifyContent: "space-between" }}
                 >
-                    <AiOutlineComment /> {like ? (<AiFillHeart className='text-danger' />) : (<AiOutlineHeart />)}
+                    <AiOutlineComment /> {like ? (<AiFillHeart className='text-danger' onClick={toggleLike} />
+                    ) : (<AiOutlineHeart onClick={toggleLike} />)}
                 </div>
             </div>
 
