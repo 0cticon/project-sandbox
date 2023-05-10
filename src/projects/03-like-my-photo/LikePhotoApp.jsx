@@ -20,13 +20,19 @@ export default function LikePhotoApp() {
         <div className="container text-center">
             <Title text={"Like Photo App"} />
             <Title classes={"subtitle"} text={`Likes ${count}`} />
-            <div className="card card-dark m-auto shadow-sm" style={{ width: 300, cursor: "pointer" }}
+            <div
+                className="card card-dark m-auto shadow-sm"
+                style={{ width: 300, cursor: "pointer" }}
             >
+
                 <div className="card-header fs-xl">
                     <AiFillSmile className='mr-2' />
                     <small>DoggyDog</small>
                 </div>
-                <img src={DoggyDog} alt="img" style={{ height: "fit-content" }} />
+                <img src={DoggyDog}
+                    alt="img"
+                    style={{ height: "fit-content" }}
+                    onDoubleClick={toggleLike} />
 
                 <div
                     className="card-footer fs-xl d-flex"
