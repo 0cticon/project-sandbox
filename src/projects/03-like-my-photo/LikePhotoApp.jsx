@@ -5,20 +5,22 @@ import DoggyDog from "./img/dog.jpeg";
 export default function LikePhotoApp() {
     // let like = false;
     const [like, setLike] = useState(false);
-    const [count, setCount] = useState(false);
+    const [count, setCount] = useState(0);
 
     const toggleLike = () => {
         if (!like) {
             setLike(true);
+            setCount(count + 1);
         } else {
             setLike(false);
+            setCount(count - 1);
         }
     };
     return (
         <div className="container text-center">
             <Title text={"Like Photo App"} />
-            <Title classes={"subtitle"} text={"Likes"} />
-            <div className="card card-dark m-auto" style={{ width: 300, cursor: "pointer" }}
+            <Title classes={"subtitle"} text={`Likes ${count}`} />
+            <div className="card card-dark m-auto shadow-sm" style={{ width: 300, cursor: "pointer" }}
             >
                 <div className="card-header fs-xl">
                     <AiFillSmile className='mr-2' />
