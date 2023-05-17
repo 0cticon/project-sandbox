@@ -1,7 +1,10 @@
 import React from 'react'
 
-export default function Button({ text }) {
+export default function Button({ text = "click", btnClass = 'click', icon }) {
     return (
-        <button className={`btn`}>{!text ? "click" : text}</button>
+        <button className={`btn ${btnClass}`}>
+            {icon}
+            {text}
+        </button>
     )
 }
