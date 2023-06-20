@@ -10,6 +10,13 @@ export default function TestimonialsApp() {
     //     console.log("My Click");
     // };
     const [testimonials, setTestimonials] = useState();
+    const [items, setItems] = useState();
+
+    useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/${testimonials}`)
+            .then(response => response.json())
+            .then(json => setItems(json))
+    }, [testimonials]);
     return (
         <div className='container m-auto'>
             <Title text={"Testimonials App"} />
@@ -31,9 +38,15 @@ export default function TestimonialsApp() {
                 icon={<BiCommentDetail />}
                 onClick={() => setTestimonials("Comments")}
             />
-            <Title classes={"subtitle text-primary"} text={!testimonials ? "Select from above!" : testimonials} />
-
+            <Title
+                classes={"subtitle text-primary"}
+                text={!testimonials ? "Select from above!" : testimonials}
+            />
+            {!items
+                ? null
+                : items.map((item) => {
+                    return <div className="card card-primary mb-2">item</div>;
+                })}
         </div>
     );
-
 }
